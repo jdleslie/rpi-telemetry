@@ -4,7 +4,8 @@
 * `sudo raspi-config`
 * Set boot option to expand filesystem at next startup
 * Advanced -> I2C = Yes and Yes
-* Make i2c device nodes [readable by all users](http://blog.chrysocome.net/2012/11/raspberry-pi-i2c.html) ```
+* Make i2c device nodes [readable by all users](http://blog.chrysocome.net/2012/11/raspberry-pi-i2c.html)
+```
 echo << EOF > /etc/udev/rules.d/99-i2c.rules
 SUBSYSTEM=="i2c-dev", MODE="0666"
 EOF
