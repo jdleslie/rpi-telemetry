@@ -6,6 +6,10 @@ the house. Previously I used [ControlByWeb](http://controlbyweb.com) devices whi
 control module. This Rpi based approach scales up to a much larger number of sensors with less hardware and a more convenient
 1U rackmount package.
 
+Do be sure to enable the ROM id chip on the breakout board for each port, which helps:
+* Ensure each port is wired properly
+* Determine which port a sensor is connect to. OWFS enumerates buses in a strange order, but groups devices by bus, so knowing the ROM id on each port chain will facilitate debugging in the future
+
 Included in this repo:
 * Design for 1U rackmount bracket to mount Raspberry Pi, [PiWire+ HAT](http://www.axiris.eu/en/index.php/1-wire/abiowire), and four [1-Wire Breakout Boards](http://www.axiris.eu/en/index.php/1-wire/1-wire-breakout-board).
   * These are simple laser cut designs that can be assembled in a single step with wood glue.
