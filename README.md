@@ -1,9 +1,10 @@
 # Overview
-Goal is to use a Raspberry Pi to gather sensor readings from a variety of 1-Wire sensors (mainly [DS18B20+](http://datasheets.maximintegrated.com/en/ds/DS18S20.pdf) assembled [inside RJ45 jacks](http://www.flickr.com/photos/aaronpk/13953336384)) embedded around
-the house. Previously I used [ControlByWeb](http://controlbyweb.com) devices, but this approach scales up to a large
-number of sensors more simply, and does not force use of BASIC and/or Lua.
-
-![rj45 thermal sensor](http://c1.staticflickr.com/6/5084/13953336384_6527c25317_k.jpg)idea from Flickr user [aaronpk](https://www.flickr.com/photos/aaronpk/)
+Goal is to use a Raspberry Pi to gather sensor readings from a variety of 1-Wire sensors (mainly 
+[DS18B20+](http://datasheets.maximintegrated.com/en/ds/DS18S20.pdf) assembled [inside RJ45 
+jacks](http://www.flickr.com/photos/aaronpk/13953336384)) embedded around
+the house. Previously I used [ControlByWeb](http://controlbyweb.com) devices which support either 4 or 8 sensors per $150-200
+control module. This Rpi based approach scales up to a much larger number of sensors with less hardware and a more convenient
+1U rackmount package.
 
 Included in this repo:
 * Design for 1U rackmount bracket to mount Raspberry Pi, [PiWire+ HAT](http://www.axiris.eu/en/index.php/1-wire/abiowire), and four [1-Wire Breakout Boards](http://www.axiris.eu/en/index.php/1-wire/1-wire-breakout-board).
@@ -11,6 +12,16 @@ Included in this repo:
   * Any 3mm thick material of the requisite thickness is fine, mine are 0.112-in/3mm masonite "hardboard" ordered from [Ponoko US](http://ponoko.com).
   * Sadly the only Ponoko material size that is wide enough is "P3", which is so large that two brackets can be ganged up in a single order
 * Notes (below) on configuration for Raspberry Pi
+
+Thermal sensors are DS18B20 ICs inside RJ45 plugs:
+
+![rj45 thermal sensor](https://photos.smugmug.com/Projects/House-Projects/1-Wire-Sensor-Hub/i-nn9RN6m/0/L/2016-07-26%2008.59.05-L.jpg)
+
+inspired by [aaronpk](http://c1.staticflickr.com/6/5084/13953336384_6527c25317_k.jpg)
+
+Assembled, senssor hub fits in 1U:
+
+![rpi sensor hub in 1U bracket](https://photos.smugmug.com/Projects/House-Projects/1-Wire-Sensor-Hub/i-7vHKcCM/1/L/2016-07-25%2018.40.12-L.jpg)
 
 # Software configuration
 The actual code that gathers data from this system this runs in a Docker instance on a different host, connecting to `owserver` over the network. Configuration on the Pi is minimal.
@@ -32,7 +43,7 @@ EOF
 ## Install Packages
 
 * `sudo apt-get update`
-* `sudo apt-get install owhttpd owserver ow-shell i2c-tools`
+* `sudo apt-get install owhttpd owserver ow-shell owfs i2c-tools`
 * `sudo systemctl enable owserver owhttpd`
 * `sudo systemctl start owserver owhttpd`
 
