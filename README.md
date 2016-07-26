@@ -18,7 +18,7 @@ Thermal sensor is a DS18B20 IC inside RJ45 plug (inspired by [aaronpk](http://c1
 ![rj45 thermal sensor](https://photos.smugmug.com/Projects/House-Projects/1-Wire-Sensor-Hub/i-nn9RN6m/0/L/2016-07-26%2008.59.05-L.jpg)
 
 
-Assembled, senssor hub fits in 1U:
+Assembled, sensor hub fits in 1U:
 
 ![rpi sensor hub in 1U bracket](https://photos.smugmug.com/Projects/House-Projects/1-Wire-Sensor-Hub/i-7vHKcCM/1/L/2016-07-25%2018.40.12-L.jpg)
 
