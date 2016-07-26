@@ -13,12 +13,14 @@ EOF
 * Reload udev rules `udevadm trigger`
 
 ## Install Packages
-`sudo apt-get update`
-`sudo apt-get install owhttpd owserver ow-shell i2c-tools`
-`sudo systemctl enable owserver owhttpd`
-`sudo systemctl start owserver owhttpd`
 
-## Modify /etc/owfs.conf
+* `sudo apt-get update`
+* `sudo apt-get install owhttpd owserver ow-shell i2c-tools`
+* `sudo systemctl enable owserver owhttpd`
+* `sudo systemctl start owserver owhttpd`
+
+## Configure OWFS
+* Edit `/etc/owfs.conf`
 ```
 # 1-Wire interfaces for PiWire+/AbioWire HAT (http://www.axiris.eu/en/index.php/1-wire/abiowire)
 server: i2c = /dev/i2c-1:0
@@ -39,4 +41,4 @@ timeout_stable = 120
 # Human-readable aliases, per http://owfs.org/index.php?page=aliases
 #alias = /etc/owfs-alias.conf # don't bother if aliases will be maintained on client side
 ```
-Restart daemons: `sudo systemctl restart owserver owhttpd`
+* Restart daemons: `sudo systemctl restart owserver owhttpd`
