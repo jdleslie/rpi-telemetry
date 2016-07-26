@@ -13,7 +13,7 @@ Included in this repo:
   * Sadly the only Ponoko material size that is wide enough is "P3", which is so large that two brackets can be ganged up in a single order
 * Notes (below) on configuration for Raspberry Pi
 
-Thermal sensors is a DS18B20 IC inside RJ45 plug (inspired by [aaronpk](http://c1.staticflickr.com/6/5084/13953336384_6527c25317_k.jpg)):
+Thermal sensor is a DS18B20 IC inside RJ45 plug (inspired by [aaronpk](http://c1.staticflickr.com/6/5084/13953336384_6527c25317_k.jpg)):
 
 ![rj45 thermal sensor](https://photos.smugmug.com/Projects/House-Projects/1-Wire-Sensor-Hub/i-nn9RN6m/0/L/2016-07-26%2008.59.05-L.jpg)
 
