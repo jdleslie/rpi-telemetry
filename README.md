@@ -6,10 +6,6 @@ the house. Previously I used [ControlByWeb](http://controlbyweb.com) devices whi
 control module. This Rpi based approach scales up to a much larger number of sensors with less hardware and a more convenient
 1U rackmount package.
 
-Do be sure to enable the ROM id chip on the breakout board for each port, which helps:
-* Ensure each port is wired properly
-* Determine which port a sensor is connect to. OWFS enumerates buses in a strange order, but groups devices by bus, so knowing the ROM id on each port chain will facilitate debugging in the future
-
 Included in this repo:
 * Design for 1U rackmount bracket to mount Raspberry Pi, [PiWire+ HAT](http://www.axiris.eu/en/index.php/1-wire/abiowire), and four [1-Wire Breakout Boards](http://www.axiris.eu/en/index.php/1-wire/1-wire-breakout-board).
   * These are simple laser cut designs that can be assembled in a single step with wood glue.
@@ -26,6 +22,13 @@ Assembled, senssor hub fits in 1U:
 
 ![rpi sensor hub in 1U bracket](https://photos.smugmug.com/Projects/House-Projects/1-Wire-Sensor-Hub/i-7vHKcCM/1/L/2016-07-25%2018.40.12-L.jpg)
 
+# Hardware & Assembly
+
+Do be sure to enable the ROM id chip on the breakout board for each port, which helps:
+* Ensure each port is wired properly
+* Determine which port a sensor is connect to. OWFS enumerates buses in a strange order, but groups devices by bus, so knowing the ROM id on each port chain will facilitate debugging in the future
+
+I used a bulk pack of 3-pin fan extension cables to wire each port back to the PiWire+, though any sort of jumper cable is possible.
 # Software configuration
 The actual code that gathers data from this system this runs in a Docker instance on a different host, connecting to `owserver` over the network. Configuration on the Pi is minimal.
 
